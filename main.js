@@ -8,6 +8,7 @@ let biblioteca = {
 };
 
 
+// Simula la lectura de datos desde un "archivo" con un retraso
 function leerDatos(callback) {
     setTimeout(() => {
         callback(biblioteca);
@@ -15,7 +16,7 @@ function leerDatos(callback) {
 }
 
 
-
+// Muestra todos los libros con su estado (disponible o prestado)
 function mostrarLibros() {
     leerDatos((datos) => {
         console.log("Inventario de libros:");
@@ -26,7 +27,7 @@ function mostrarLibros() {
 }
 
 
-
+// Agrega un nuevo libro a la biblioteca después de un retraso
 function agregarLibro(titulo, autor, genero, disponible) {
     const nuevoLibro = { titulo, autor, genero, disponible };
     // Aquí falta la simulación de escribir el libro en el "archivo" (es decir, agregarlo al objeto)
@@ -37,16 +38,26 @@ function agregarLibro(titulo, autor, genero, disponible) {
 }
 
 
+// Actualiza el estado de disponibilidad de un libro por título
 function actualizarDisponibilidad(titulo, nuevoEstado) {
     // Simula un retraso antes de actualizar la disponibilidad
     setTimeout(() => {
-        const libro = biblioteca.libros.find(function(l) {
-        return l.titulo === titulo;
+        const libro = biblioteca.libros.find(function(libroActual) {
+            return libroActual.titulo === titulo;
         });
 
         if (libro) {
             libro.disponible = nuevoEstado;
-            console.log("Disponibilidad actualizada: " + titulo + " -> " + (nuevoEstado ? "Disponible" : "Prestado"));
+
+            
+            let estadoTexto;
+            if (nuevoEstado) {
+                estadoTexto = "Disponible";
+            } else {
+                estadoTexto = "Prestado";
+            }
+
+            console.log("Disponibilidad actualizada: " + titulo + " -> " + estadoTexto);
         } else {
             console.log("Libro no encontrado: " + titulo);
         }
@@ -55,7 +66,7 @@ function actualizarDisponibilidad(titulo, nuevoEstado) {
 }
 
 
-
+// Llamadas de prueba
 mostrarLibros();
 agregarLibro("El principito", "Antoine de Saint-Exupéry", "Fábula", true);
 actualizarDisponibilidad("1984", false);

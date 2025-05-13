@@ -5,10 +5,10 @@ El presente repositorio contiene el proyecto 2 del Módulo "Desarrollo avanzado 
 - Crear una pequeña aplicación de consola para practicar callbacks y JSON
 
 ## Lo aprendido
-- Como me fui guiando con la guía que subieron a campus no fue tan díficil porque a diferencia de los otros donde nos dan el código esqueleto y tenemos que ir completando, aquí solo nos pedían completar una parte pequeña del código 
+- Como ya llevamos muchas clases viendo lo del setTimeout esa fue la parte que menos se me dificultó, aunque hubiera quedado mejor, idealmente, con async/await
 
 
 
 
 ### Código JS
-![Texto alternativo](https://i.imgur.com/uL22fUJ.png)
+![Texto alternativo](https://i.imgur.com/WlQngkq.png)
